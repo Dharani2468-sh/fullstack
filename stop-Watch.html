@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>task-3</title>
+    <link rel="stylesheet" href="./style.css">
+    <style>
+        ul{
+            width: 400px;
+            list-style-type: none;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content:space-between;
+        }
+        header {
+            display: flex;
+        }
+        a {
+            text-decoration: none;
+            color: aliceblue;
+        }
+        .xx{
+            color: rgb(90, 39, 152);
+        }
+        body {
+            background: linear-gradient(300deg, #00bfff, #ff4c68, #ef8172);
+            background-size: 180% 180%;
+            animation: gradient-animation 18s ease infinite;
+        }
+    </style>
+</head>
+<body>
+    <header class="gd-li-bg">
+        <img src="./box-seam.svg" height="40px">
+        <ul>
+            <li> 
+                <a href="./index.html" >Home</a> 
+            </li>
+            <li> 
+                <a href="./add.html">Add </a>
+            </li>
+            <li> <a href="#" class="xx"> Stop watch</a> </li>
+            <li> <a href="./conv.html">dg-convert</a></li>
+            <li> <a href="./calc.html">Calculator</a><li>
+        </ul>
+    </header>
+    <p><strong>StopWatch</strong></p>
+    <button type="button" onclick="Start()">Start</button>
+    <button type="button" onclick="Stop()">Stop</button>
+    <button type="button" onclick="Reset()">Reset</button>
+    <p id="count">0</p>
+    <script>
+        let count = 0;
+        let intervalid = 0;
+        function Start() {
+            intervalid = setInterval(() => {
+                document.getElementById("count").innerText = ++count;
+            }, 1000);
+        }
+        function Stop() {
+            clearInterval(intervalid);
+        }
+        function Reset() {
+            clearInterval(intervalid);
+            count = 0;
+            document.getElementById("count").innerText = count;
+        }
+    </script>
+</body>
+</html>

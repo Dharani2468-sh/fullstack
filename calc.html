@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>task-3</title>
+    <link rel="stylesheet" href="./style.css">
+    <style>
+        ul{
+            width: 400px;
+            list-style-type: none;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content:space-between;
+        }
+        header {
+            display: flex;
+        }
+        a {
+            text-decoration: none;
+            color: aliceblue;
+        }
+        .xx{
+            color: rgb(90, 39, 152);
+        }
+        .flex {
+            display: flex;
+            text-align: center;
+            align-items: center;
+        }
+        .Calculator {
+            width: 300px;
+            height: 400px;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+            gap: 10px;
+            background: linear-gradient(300deg, #3fc4f1, #d5a9ed, #ef8172);
+            background-size: 180% 180%;
+            animation: gradient-animation 18s ease infinite;
+            border-radius: 10px;
+            padding: 15px;
+        }
+        .popup {
+            grid-column: span 4;
+            padding: 10px;
+            background: linear-gradient(300deg, #5f6c2f, #5aa9a1, #48427c);
+            background-size: 180% 180%;
+            animation: gradient-animation 18s ease infinite;
+            margin-bottom: 10px;
+            border-radius: 10px;
+            color: #372d2d;
+            font-size: 18px;
+        }
+        button {
+            background: linear-gradient(300deg, #c677f4, #474a6f, #f18bf1);
+            background-size: 180% 180%;
+            animation: gradient-animation 18s ease infinite;
+            width: 60px;  
+            height: 60px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 18px;
+            color: #fff;
+            border: none;
+        }
+        @keyframes gradient-animation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        body {
+            background: linear-gradient(300deg, #c0e1ec, #e9b4bc, #bfef72);
+            background-size: 180% 180%;
+            animation: gradient-animation 18s ease infinite;
+        }
+    </style>
+</head>
+<body>
+    <header class="gd-li-bg">
+        <img src="./box-seam.svg" height="40px">
+        <ul>
+            <li> 
+                <a href="./index.html" >Home</a> 
+            </li>
+            <li> 
+                <a href="./add.html">Add </a>
+            </li>
+            <li> <a href="./stop-Watch.html"> Stop watch</a> </li>
+            <li> <a href="./conv.html" >dg-convert</a></li>
+            <li> <a href="#" class="xx" >Calculator</a><li>
+        </ul>
+    </header>
+    <h3>Calculator</h3>
+    <div class="flex hjhhjh">
+        <div class="Calculator">
+            <div class="popup" id="display"></div>
+            <button onclick="append('1')">1</button>
+            <button onclick="append('2')">2</button>
+            <button onclick="append('3')">3</button>
+            <button onclick="append('+')">+</button>
+            <button onclick="append('4')">4</button>
+            <button onclick="append('5')">5</button>
+            <button onclick="append('6')">6</button>
+            <button onclick="append('-')">-</button>
+            <button onclick="append('7')">7</button>
+            <button onclick="append('8')">8</button>
+            <button onclick="append('9')">9</button>
+            <button onclick="append('*')">*</button>
+            <button onclick="clear()">C</button>
+            <button onclick="append('0')">0</button>
+            <button onclick="calculate()">=</button>
+            <button onclick="append('/')">/</button>
+        </div>
+    </div>
+
+    <script>
+        let input = '';
+
+        function update() {
+            document.getElementById('display').innerText = input;
+        }
+
+        function append(value) {
+            input += value;
+            update();
+        }
+
+        function calculate() {
+            try {
+                input = eval(input).toString();
+            } catch {
+                input = 'Error';
+            }
+            update();
+        }
+
+        function clear() {
+            input = '';
+            update();
+        }
+    </script>
+</body>
+</html>

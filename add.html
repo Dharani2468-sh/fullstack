@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>task-3</title>
+    <link rel="stylesheet" href="./style.css">
+    <style>
+        ul{
+            width: 400px;
+            list-style-type: none;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content:space-between;
+        }
+        header {
+            display: flex;
+        }
+        a {
+            text-decoration: none;
+            color: aliceblue;
+        }
+        .xx{
+            color: rgb(90, 39, 152);
+        }
+        body {
+            background: linear-gradient(300deg, #dce3e6, #e1c8cb, #f4f1f132);
+            background-size: 180% 180%;
+            animation: gradient-animation 18s ease infinite;
+        }
+        div {
+            height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+    </style>
+</head>
+<body>
+    <header class="gd-li-bg">
+        <img src="./box-seam.svg" height="40px">
+        <ul>
+            <li> 
+                <a href="./index.html" >Home</a> 
+            </li>
+            <li> 
+                <a href="#" class="xx">Add </a>
+            </li>
+            <li> <a href="./stop-Watch.html"> Stop watch</a> </li>
+            <li> <a href="./conv.html">dg-convert</a></li>
+            <li> <a href="./calc.html">Calculator</a><li>
+        </ul>
+    </header>
+    <div>
+        <p><strong>Adding two numbers</strong></p>
+        <label for="firstinput">x</label>
+        <input type="number" name="x" id="x">
+        <lable for="secondinput">y</lable>
+        <input type="number" name="y" id="y">
+        <button type="button" onclick="Answer()">Answer</button>
+        <p id="res"></p>
+        <script>
+            function Answer() {
+                const x = parseInt(document.getElementById("x").value);
+                const y = parseInt(document.getElementById("y").value);
+                document.getElementById("res").innerText = `answer: ${x + y}`;
+            }
+        </script>
+    </div>
+</body>
+</html>

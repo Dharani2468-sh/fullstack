@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>task-3</title>
+    <link rel="stylesheet" href="./style.css">
+    <style>
+        ul{
+            width: 400px;
+            list-style-type: none;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content:space-between;
+        }
+        header {
+            display: flex;
+        }
+        a {
+            text-decoration: none;
+            color: aliceblue;
+        }
+        .xx{
+            color: rgb(90, 39, 152);
+        }
+        body {
+            background: linear-gradient(300deg, #00bfff, #ff4c68, #ef8172);
+            background-size: 400% 180%;
+            animation: gradient-animation 18s ease infinite;
+        }
+    </style>
+</head>
+<body>
+    <header class="gd-li-bg">
+        <img src="./box-seam.svg" height="40px">
+        <ul>
+            <li> 
+                <a href="./index.html" >Home</a> 
+            </li>
+            <li> 
+                <a href="./add.html">Add </a>
+            </li>
+            <li> <a href="./stop-Watch.html"> Stop watch</a> </li>
+            <li> <a href="./conv.html" class="xx">dg-convert</a></li>
+            <li> <a href="./calc.html" >Calculator</a><li>
+        </ul>
+    </header>
+    <h1>Convert Fahrenheit to Celsius</h1>
+    <label for="input">Enter Fahrenheit :</label>
+    <input type="text" id="input" name="input">
+    <button type="button" onclick="toCelsius()">To Celsius</button>
+    <p>Output is <span id="output"></span></p>
+
+    <script>
+        function toCelsius(){
+            const val=parseInt(document.getElementById('input').value);
+            const res=Math.round((val-32)/(9/5));
+            document.getElementById('output').innerText=res;
+        }
+    </script>
+</body>
+</html>
